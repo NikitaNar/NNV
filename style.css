@@ -14,6 +14,19 @@ body {
   flex-direction: column;
 }
 
+html,
+body,
+.modal-overlay {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.modal-overlay::-webkit-scrollbar {
+  display: none;
+}
+
 /* Header & Filter Nav */
 .header {
   display: flex;
@@ -674,7 +687,7 @@ body {
   font-size: 14px;
   text-decoration: none;
   border: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .btn-secondary {
@@ -839,6 +852,10 @@ body {
 
 /* Hover-эффекты только для устройств с мышью (без залипания на тач-экранах) */
 @media (hover: hover) {
+  .btn-primary:hover {
+    background-color: #e4e4e7;
+  }
+
   .site-logo:hover {
     opacity: 0.8;
   }
@@ -909,10 +926,6 @@ body {
 
   .socials a:hover {
     transform: scale(1.15);
-  }
-
-  .btn-primary:hover {
-    transform: scale(1.04);
   }
 
   .btn-secondary:hover {
@@ -1074,3 +1087,4 @@ body {
     height: 38px;
   }
 }
+
