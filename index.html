@@ -198,8 +198,12 @@
 
   <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРЕЗЕНТАЦИИ КЕЙСОВ -->
   <div id="projectModal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
-    <button class="lightbox-nav-btn lightbox-prev case-nav-btn" onclick="openPrevProject(event)" aria-label="Previous case">‹</button>
-    <button class="lightbox-nav-btn lightbox-next case-nav-btn" onclick="openNextProject(event)" aria-label="Next case">›</button>
+    <button class="lightbox-nav-btn lightbox-prev case-nav-btn" onclick="openPrevProject(event)" aria-label="Previous case">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-next case-nav-btn" onclick="openNextProject(event)" aria-label="Next case">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
 
     <div class="modal-container">
       <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">&times;</button>
@@ -223,8 +227,12 @@
   <!-- ЛАЙТБОКС ДЛЯ ОДИНОЧНЫХ РАБОТ (С НАВИГАЦИЕЙ И СВАЙПОМ) -->
   <div id="lightboxModal" class="modal-overlay lightbox-overlay" onclick="closeLightboxOnOuterClick(event)">
     <button class="modal-close-btn lightbox-close" onclick="closeLightbox()" aria-label="Close preview">&times;</button>
-    <button class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1, event)" aria-label="Previous work">‹</button>
-    <button class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1, event)" aria-label="Next work">›</button>
+    <button class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1, event)" aria-label="Previous work">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1, event)" aria-label="Next work">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
 
     <div class="lightbox-content">
       <img id="lightboxImg" src="" alt="">
