@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Nikita Nareyko</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon & Social Preview (Open Graph) -->
+  <link rel="icon" type="image/png" href="images/LOGO_WHITE_BACKGROUND2.png">
+  <link rel="apple-touch-icon" href="images/LOGO_WHITE_BACKGROUND2.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nikita Nareyko — Graphic Designer & Brand Identity Specialist">
+  <meta property="og:description" content="Brand identities, visual systems, logo animation, print & 3D design. Warsaw, Poland.">
+  <meta property="og:image" content="images/LOGO_WHITE_BACKGROUND2.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nikita Nareyko — Graphic Designer">
+  <meta name="twitter:description" content="Brand identities, visual systems, logo animation, print & 3D design.">
+  <meta name="twitter:image" content="images/LOGO_WHITE_BACKGROUND2.png">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/nnv_wh2.png" alt="NNV Logo" class="site-logo">
+      </a>
+    </div>
+    
+    <nav class="nav-filters">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">ALL</button>
+      <button class="filter-btn" onclick="filterProjects('branding', this)">Branding & Identity</button>
+      <button class="filter-btn" onclick="filterProjects('animation', this)">Animation</button>
+      <button class="filter-btn" onclick="filterProjects('logos', this)">Logos</button>
+      <button class="filter-btn" onclick="filterProjects('posters', this)">Posters</button>
+      <button class="filter-btn" onclick="filterProjects('print', this)">Print</button>
+      <button class="filter-btn" onclick="filterProjects('stationery', this)">Stationery</button>
+      <button class="filter-btn" onclick="filterProjects('3d', this)">3D</button>
+    </nav>
+
+    <a href="about.html" class="filter-btn about-nav-btn">About me</a>
+  </header>
+
+  <!-- Сетка проектов -->
+  <main class="gallery" data-active-category="all">
+
+    <!-- ================= 6 ПЕРВЫХ ПРОЕКТОВ ================= -->
+    
+    <!-- 1. FrameworkFest (Кейс) -->
+    <div class="card branding posters clickable-case" onclick="openProject('frameworkfest')">
+      <img src="images/Branding_Identity/FrameworkFest/FrameworkFest_poster.png" alt="FrameworkFest Poster">
+      <div class="case-badge">VIEW CASE</div>
+    </div>
+
+    <!-- 2. VSCL Package (Кейс) -->
+    <div class="card branding clickable-case" onclick="openProject('vscl')">
+      <img src="images/Branding_Identity/VSCL/VSCL_package2.png" alt="VSCL Package">
+      <div class="case-badge">VIEW CASE</div>
+    </div>
+
+    <!-- 3. ARTIST Business Cards -->
+    <div class="card stationery">
+      <img src="images/Stationery/ARTIST bc.png" alt="ARTIST Business Cards">
+    </div>
+
+    <!-- 4. TM Poster -->
+    <div class="card posters">
+      <img src="images/Poster/TM_Poster.jpg" alt="TM Poster">
+    </div>
+
+    <!-- 5. Artini Magazine -->
+    <div class="card print">
+      <img src="images/Print/Artini_magazine.png" alt="Artini Magazine">
+    </div>
+
+    <!-- 6. FaFest Poster (Кейс) -->
+    <div class="card posters branding clickable-case" onclick="openProject('fafest')">
+      <img src="images/Poster/FaFest_poster.png" alt="FaFest Poster">
+      <div class="case-badge">VIEW CASE</div>
+    </div>
+
+    <!-- Анимации -->
+    <div class="card animation animation-card contain-card">
+      <img src="images/Animation/MstrRonin_animated.gif" alt="Master Ronin Animation" loading="lazy" decoding="async">
+    </div>
+
+    <div class="card animation animation-card">
+      <img src="images/Animation/FairHelm1_animation(GIF).gif" alt="FairHelm Compass Animation" class="crop-top-img" loading="lazy" decoding="async">
+    </div>
+
+    <!-- ================= ОСТАЛЬНЫЕ РАБОТЫ (МИКС) ================= -->
+    
+    <!-- Карточка кейса FairHelm (Branding + Animation) -->
+    <div class="card branding animation clickable-case contain-card" onclick="openProject('fairhelm')">
+      <img src="images/Animation/FairHelm_animation_NEW.gif" alt="FairHelm Animated Identity" loading="lazy" decoding="async">
+      <div class="case-badge">VIEW CASE</div>
+    </div>
+
+    <div class="card posters">
+      <img src="images/Poster/AeroNova poster.png" alt="AeroNova Poster" loading="lazy">
+    </div>
+
+    <div class="card print">
+      <img src="images/Print/BobDylan_booklet.png" alt="Bob Dylan Booklet" loading="lazy">
+    </div>
+
+    <div class="card posters">
+      <img src="images/Poster/Circus.png" alt="Circus Poster" loading="lazy">
+    </div>
+
+    <div class="card stationery">
+      <img src="images/Stationery/Badge 2.png" alt="Badge 2" loading="lazy">
+    </div>
+
+    <div class="card print">
+      <img src="images/Print/Ikea_booklet.png" alt="IKEA Booklet" loading="lazy">
+    </div>
+
+    <div class="card stationery">
+      <img src="images/Stationery/Malik_bc.png" alt="Malik Business Card" loading="lazy">
+    </div>
+
+    <div class="card print">
+      <img src="images/Print/Aeronova_triplet.png" alt="Aeronova Triplet" loading="lazy">
+    </div>
+
+    <div class="card print">
+      <img src="images/Print/Overfishing_booklet.png" alt="Overfishing Booklet" loading="lazy">
+    </div>
+
+    <div class="card print">
+      <img src="images/Print/FrameworkFest_booklet.png" alt="FrameworkFest Booklet" loading="lazy">
+    </div>
+
+    <div class="card stationery">
+      <img src="images/Stationery/MCKESSON_bc.png" alt="McKesson Business Card" loading="lazy">
+    </div>
+
+    <div class="card stationery">
+      <img src="images/Stationery/VSCL_card.png" alt="VSCL Card" loading="lazy">
+    </div>
+
+    <!-- ================= LOGOS ================= -->
+    <div class="card logos">
+      <img src="images/Logo/FrameworkFest_Logo.png" alt="FrameworkFest Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/FH_logoNEW.png" alt="FairHelm Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-black vscl-logo">
+      <img src="images/Logo/VSCL_logo.png" alt="VSCL Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/NNV_LOGO.png" alt="NNV Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/AeroNova_logo.png" alt="AeroNova Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/Artini logo.png" alt="Artini Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/ARTIST_logo.png" alt="ARTIST Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/bakery-11.png" alt="Pixie Bakery Logo" loading="lazy">
+    </div>
+    <div class="card logos logo-card bg-white">
+      <img src="images/Logo/Malik_Logo.png" alt="Malik Logo" loading="lazy">
+    </div>
+
+    <!-- ================= 3D & DIPLOMA GUITAR (ВСЕ 3 КЛИКАБЕЛЬНЫ) ================= -->
+    <div class="card 3d clickable-case primary-3d-case" onclick="openProject('kraken')">
+      <img src="images/3D/agressive_guitar.png" alt="Kraken's Touch — Aggressive Guitar 3D Concept" loading="lazy">
+      <div class="case-badge">VIEW 3D CASE</div>
+    </div>
+    <div class="card 3d clickable-case" onclick="openProject('kraken')">
+      <img src="images/3D/warm_guitar.png" alt="Kraken's Touch — Warm Guitar 3D Concept" loading="lazy">
+      <div class="case-badge">VIEW 3D CASE</div>
+    </div>
+    <div class="card 3d clickable-case" onclick="openProject('kraken')">
+      <img src="images/3D/calm_guitar.png" alt="Kraken's Touch — Calm Guitar 3D Concept" loading="lazy">
+      <div class="case-badge">VIEW 3D CASE</div>
+    </div>
+
+    <!-- CTA карточка в конце вкладки ALL -->
+    <div class="card cta-case-card" onclick="document.querySelector('.filter-btn[onclick*=\'branding\']').click()">
+      <div class="cta-case-content">
+        <h3>VIEW BRANDING & IDENTITY CASES</h3>
+        <span class="cta-arrow">→</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРЕЗЕНТАЦИИ КЕЙСОВ -->
+  <div id="projectModal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
+    <button class="lightbox-nav-btn lightbox-prev case-nav-btn" onclick="openPrevProject(event)" aria-label="Previous case">‹</button>
+    <button class="lightbox-nav-btn lightbox-next case-nav-btn" onclick="openNextProject(event)" aria-label="Next case">›</button>
+
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="modalTitle">Project Title</h2>
+        <div id="modalSub">Identity & Branding Case</div>
+        <p id="modalDesc" class="modal-desc"></p>
+        <div id="modalActionContainer"></div>
+      </div>
+
+      <div id="modalBody" class="modal-body-gallery"></div>
+
+      <div class="modal-footer-nav">
+        <button class="btn-secondary" onclick="closeProjectModal()">← Back to Works</button>
+        <button id="nextCaseBtn" class="btn-primary" onclick="openNextProject()">Next Case →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ЛАЙТБОКС ДЛЯ ОДИНОЧНЫХ РАБОТ (С НАВИГАЦИЕЙ И СВАЙПОМ) -->
+  <div id="lightboxModal" class="modal-overlay lightbox-overlay" onclick="closeLightboxOnOuterClick(event)">
+    <button class="modal-close-btn lightbox-close" onclick="closeLightbox()" aria-label="Close preview">&times;</button>
+    <button class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1, event)" aria-label="Previous work">‹</button>
+    <button class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1, event)" aria-label="Next work">›</button>
+
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-meta">
+        <span id="lightboxCaption" class="lightbox-caption"></span>
+        <span id="lightboxCounter" class="lightbox-counter"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Кнопка Back to Top -->
+  <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Тост-уведомление о копировании почты -->
+  <div id="copyToast" class="copy-toast">Email copied: nikita@nareyko.com</div>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-cta-group">
+        <span class="status-badge" title="Available for full-time & freelance opportunities">
+          <span class="status-dot"></span> Open to Work
+        </span>
+        <a href="mailto:nikita@nareyko.com" class="cta-link">LET'S WORK TOGETHER</a>
+        <button class="copy-email-btn" onclick="copyEmail()" title="Copy email address">Copy email</button>
+        <a href="images/About/Nikita_Nareyko_Resume_Graphic_Designer.pdf" target="_blank" class="copy-email-btn footer-cv-link" title="Open Resume PDF">CV (PDF)</a>
+      </div>
+      
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/nikitnar/" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.behance.net/NikitNar" target="_blank" aria-label="Behance">Bē</a>
+        <a href="https://t.me/NikitNar" target="_blank" aria-label="Telegram">TG</a>
+        <a href="mailto:nikita@nareyko.com" aria-label="Email">✉</a>
+      </div>
+
+      <div class="copyright">© 2026 All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!-- JS ДЛЯ ФИЛЬТРАЦИИ, КЕЙСОВ, ЛАЙТБОКСА И BACK-TO-TOP -->
+ <script>
+    let currentCardElement = null;
+
+    const brandingProjects = {
+      frameworkfest: {
+        title: "Framework Fest",
+        sub: "Film Festival Visual Identity",
+        desc: "Comprehensive visual identity system for an independent film festival—combining modular frame geometry, bold editorial typography, print booklets, tickets, and VIP/Press accreditation badges.",
+        images: [
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_poster.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_logo.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_post.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_booklet.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_ticket.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_IDCARD_PRESS.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_IDCARD_VIP.png",
+          "images/Branding_Identity/FrameworkFest/FrameworkFest_IDCARD_visitor.png"
+        ]
+      },
+      vscl: {
+        title: "VSCL Specialty Coffee",
+        sub: "Packaging & Coffee Lab Identity",
+        desc: "Minimalist packaging and brand system for a specialty coffee roastery. Built around clean typographic hierarchy, tactile paper bags, takeaway cups, and storefront signage.",
+        images: [
+          "images/Branding_Identity/VSCL/VSCL_package2.png",
+          "images/Branding_Identity/VSCL/VSCL_Coffee Cups.png",
+          "images/Branding_Identity/VSCL/VSCL_PAPER BAG.png",
+          "images/Branding_Identity/VSCL/VSCL_sign.png",
+          "images/Branding_Identity/VSCL/VSCL_card.png"
+        ]
+      },
+      fafest: {
+        title: "Fa Fest 2026",
+        sub: "Classical Music Festival Identity",
+        desc: "Visual language for a contemporary classical music festival. Designed across large-format outdoor banners, posters, event wristbands, tickets, and merchandise.",
+        images: [
+          "images/Branding_Identity/FaFest/FaFest_WEB.png",
+          "images/Branding_Identity/FaFest/Banner.png",
+          "images/Branding_Identity/FaFest/BANNER WALL.png",
+          "images/Branding_Identity/FaFest/Poster2.png",
+          "images/Branding_Identity/FaFest/Badge 2.png",
+          "images/Branding_Identity/FaFest/FaFest_bracelet.png",
+          "images/Branding_Identity/FaFest/cup.png",
+          "images/Branding_Identity/FaFest/Roller.png",
+          "images/Branding_Identity/FaFest/Ticket2.png"
+        ]
+      },
+      fairhelm: {
+        title: "FairHelm",
+        sub: "B2B Brand Identity, Motion & Guidelines",
+        desc: "End-to-end brand identity, logo animation, and 11-page brand book for FairHelm—establishing colour architecture, typography, and digital communication standards.",
+        images: [
+          "images/Branding_Identity/FairHelm/FairHelm_Post1.png",
+          "images/Branding_Identity/FairHelm/FairHelm_Post2.png",
+          "images/Branding_Identity/FairHelm/BB1_1.png",
+          "images/Branding_Identity/FairHelm/BB1_2.png",
+          "images/Branding_Identity/FairHelm/BB1_3.png",
+          "images/Branding_Identity/FairHelm/BB1_4.png",
+          "images/Branding_Identity/FairHelm/BB1_5.png",
+          "images/Branding_Identity/FairHelm/BB1_6.png",
+          "images/Branding_Identity/FairHelm/BB1_7.png",
+          "images/Branding_Identity/FairHelm/BB1_8.png",
+          "images/Branding_Identity/FairHelm/BB1_9.png",
+          "images/Branding_Identity/FairHelm/BB1_10.png",
+          "images/Branding_Identity/FairHelm/BB1_11.png"
+        ]
+      },
+      kraken: {
+        title: "Kraken's Touch — Graduation Project",
+        sub: "From 3D Emotional Form Language in Blender to Handcrafted Physical Guitar (2026)",
+        pdf: "images/About/Diploma_Presentation.pdf",
+        desc: "Concept: Guitar as Personality — exploring how silhouette, clay form, and graphic patterns express three emotional states (Calm, Warm, Aggressive). Process: moodboards → hand sketches & clay sculpting → procedural patterns → 3D modeling in Blender → CNC/hand-shaping, custom painting, and assembling a playable electric guitar.",
+        images: [
+          "images/About/B1.jpg",
+          "images/3D/agressive_guitar.png",
+          "images/3D/warm_guitar.png",
+          "images/3D/calm_guitar.png",
+          "images/About/diploma_guitar.jpg",
+          "images/About/me_graduated.jpg"
+        ]
+      }
+    };
+
+    /* Получить ID кейса из карточки (если она кейсовая) */
+    function getCardProjectId(card) {
+      if (!card) return null;
+      const onclickAttr = card.getAttribute('onclick') || '';
+      const match = onclickAttr.match(/openProject\('([^']+)'\)/);
+      return match ? match[1] : null;
+    }
+
+    /* Единый список всех видимых работ в активной категории (без дублирования одного и того же кейса) */
+    function getNavigableCards() {
+      const visibleCards = Array.from(document.querySelectorAll('.card:not(.cta-case-card)'))
+        .filter(card => card.style.display !== 'none');
+
+      const seenProjects = new Set();
+      return visibleCards.filter(card => {
+        const pid = getCardProjectId(card);
+        if (pid) {
+          if (seenProjects.has(pid)) return false;
+          seenProjects.add(pid);
+        }
+        return true;
+      });
+    }
+
+    /* Найти следующую/предыдущую карточку в едином потоке */
+    function getAdjacentCard(step) {
+      const cards = getNavigableCards();
+      if (!cards.length) return null;
+
+      let idx = cards.indexOf(currentCardElement);
+      if (idx === -1 && currentCardElement) {
+        const pid = getCardProjectId(currentCardElement);
+        if (pid) {
+          idx = cards.findIndex(c => getCardProjectId(c) === pid);
+        }
+      }
+      if (idx === -1) idx = 0;
+
+      const nextIdx = (idx + step + cards.length) % cards.length;
+      return cards[nextIdx];
+    }
+
+    /* Открыть любую карточку (либо как кейс, либо в лайтбоксе) */
+    function openCardItem(card) {
+      if (!card) return;
+      const pid = getCardProjectId(card);
+      if (pid) {
+        document.getElementById('lightboxModal').classList.remove('active');
+        openProject(pid, card);
+      } else {
+        document.getElementById('projectModal').classList.remove('active');
+        openLightboxForCard(card);
+      }
+    }
+
+    function filterProjects(category, btnElement) {
+      const buttons = document.querySelectorAll('.filter-btn:not(.about-nav-btn)');
+      const cards = document.querySelectorAll('.card');
+      const gallery = document.querySelector('.gallery');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      if (gallery) {
+        gallery.setAttribute('data-active-category', category);
+      }
+
+      const toReveal = [];
+
+      cards.forEach(card => {
+        if (card.classList.contains('cta-case-card')) {
+          card.style.display = (category === 'all') ? 'flex' : 'none';
+          return;
+        }
+
+        if (category === 'all' || card.classList.contains(category)) {
+          card.classList.add('pre-fade');
+          card.style.display = 'flex';
+          toReveal.push(card);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      /* Один общий кадр для всех карточек вместо 35 отдельных вызовов */
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          toReveal.forEach(card => card.classList.remove('pre-fade'));
+        });
+      });
+    }
+
+    function openProject(projectId, sourceCard) {
+      const proj = brandingProjects[projectId];
+      if (!proj) return;
+
+      if (sourceCard) {
+        currentCardElement = sourceCard;
+      } else {
+        currentCardElement = Array.from(document.querySelectorAll('.card.clickable-case'))
+          .find(c => getCardProjectId(c) === projectId) || null;
+      }
+
+      document.getElementById('modalTitle').innerText = proj.title;
+      document.getElementById('modalSub').innerText = proj.sub;
+      document.getElementById('modalDesc').innerText = proj.desc || '';
+      
+      const actionContainer = document.getElementById('modalActionContainer');
+      actionContainer.innerHTML = proj.pdf
+        ? `<a href="${proj.pdf}" target="_blank" class="btn-primary" style="display:inline-block; margin-top:16px;">Open Full Concept PDF →</a>`
+        : '';
+      
+      const modalBody = document.getElementById('modalBody');
+      const fragment = document.createDocumentFragment();
+
+      proj.images.forEach((imgUrl, idx) => {
+        const img = document.createElement('img');
+        img.src = imgUrl;
+        img.alt = proj.title;
+        img.decoding = 'async';
+        if (idx > 1) img.loading = 'lazy';
+        fragment.appendChild(img);
+      });
+
+      modalBody.replaceChildren(fragment);
+
+      const nextCard = getAdjacentCard(1);
+      const nextBtn = document.getElementById('nextCaseBtn');
+      if (nextCard) {
+        const nextPid = getCardProjectId(nextCard);
+        if (nextPid && brandingProjects[nextPid]) {
+          nextBtn.innerText = `Next: ${brandingProjects[nextPid].title} →`;
+          /* Тихая предзагрузка первого слайда следующего кейса */
+          const preloadImg = new Image();
+          preloadImg.src = brandingProjects[nextPid].images[0];
+        } else {
+          const nextAlt = nextCard.querySelector('img')?.alt || 'Next Work';
+          nextBtn.innerText = `Next: ${nextAlt} →`;
+        }
+      }
+
+      const modal = document.getElementById('projectModal');
+      modal.scrollTop = 0;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      updateBackToTopVisibility();
+    }
+
+    function openNextProject(event) {
+      if (event) event.stopPropagation();
+      const nextCard = getAdjacentCard(1);
+      if (nextCard) openCardItem(nextCard);
+    }
+
+    function openPrevProject(event) {
+      if (event) event.stopPropagation();
+      const prevCard = getAdjacentCard(-1);
+      if (prevCard) openCardItem(prevCard);
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+      updateBackToTopVisibility();
+    }
+
+    function closeModalOnOuterClick(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        closeProjectModal();
+      }
+    }
+
+    /* ================= ЕДИНЫЙ ЛАЙТБОКС С ПЕРЕХОДОМ В КЕЙСЫ ================= */
+    function openLightboxForCard(card) {
+      const cards = getNavigableCards();
+      const idx = cards.indexOf(card);
+      if (idx === -1) return;
+
+      currentCardElement = card;
+      const img = card.querySelector('img');
+      if (!img) return;
+
+      const lbImg = document.getElementById('lightboxImg');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbImg.style.backgroundColor = (
+        card.classList.contains('bg-white') ||
+        card.classList.contains('contain-card') ||
+        card.classList.contains('animation-card')
+      ) ? '#ffffff' : 'transparent';
+
+      document.getElementById('lightboxCaption').innerText = img.alt;
+      document.getElementById('lightboxCounter').innerText = `${idx + 1} / ${cards.length}`;
+
+      document.getElementById('lightboxModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      updateBackToTopVisibility();
+    }
+
+    document.querySelectorAll('.card:not(.clickable-case):not(.cta-case-card)').forEach(card => {
+      card.style.cursor = 'zoom-in';
+      card.addEventListener('click', () => {
+        openLightboxForCard(card);
+      });
+    });
+
+    function navigateLightbox(step, event) {
+      if (event) event.stopPropagation();
+      const targetCard = getAdjacentCard(step);
+      if (targetCard) openCardItem(targetCard);
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+      updateBackToTopVisibility();
+    }
+
+    function closeLightboxOnOuterClick(event) {
+      if (event.target.classList.contains('lightbox-overlay')) {
+        closeLightbox();
+      }
+    }
+
+    /* Поддержка свайпов в лайтбоксе */
+    let touchStartX = 0;
+    const lightboxEl = document.getElementById('lightboxModal');
+    lightboxEl.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxEl.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 45) {
+        navigateLightbox(diff < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+
+    /* Клавиатура: Esc, Left, Right в едином сквозном режиме */
+    document.addEventListener('keydown', function(e) {
+      const lbActive = document.getElementById('lightboxModal').classList.contains('active');
+      const projActive = document.getElementById('projectModal').classList.contains('active');
+
+      if (e.key === 'Escape') {
+        if (lbActive) closeLightbox();
+        if (projActive) closeProjectModal();
+      } else if (e.key === 'ArrowRight') {
+        if (lbActive || projActive) {
+          const nextCard = getAdjacentCard(1);
+          if (nextCard) openCardItem(nextCard);
+        }
+      } else if (e.key === 'ArrowLeft') {
+        if (lbActive || projActive) {
+          const prevCard = getAdjacentCard(-1);
+          if (prevCard) openCardItem(prevCard);
+        }
+      }
+    });
+
+    /* ================= BACK TO TOP ================= */
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    function updateBackToTopVisibility() {
+      const anyModalOpen = document.querySelector('.modal-overlay.active') !== null;
+      if (!anyModalOpen && window.scrollY > 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ================= COPY EMAIL ================= */
+    function copyEmail() {
+      navigator.clipboard.writeText('nikita@nareyko.com').then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2400);
+      });
+    }
+
+    /* Авто-открытие кейса по хэшу в URL (например, index.html#kraken) */
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && brandingProjects[hash]) {
+        openProject(hash);
+      }
+    });
+  </script>
+
+</body>
+</html>

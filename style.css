@@ -1,0 +1,1065 @@
+/* Сброс базовых стилей */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Filter Nav */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  background-color: #000000;
+  border-bottom: 1px solid #141416;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.nav-filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 6px 8px;
+  margin-left: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Кнопки меню */
+.filter-btn {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.filter-btn.active {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Выделенная кнопка-ссылка About me / Works */
+.about-nav-btn {
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Плавное появление карточек при фильтрации */
+.card.pre-fade {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: none !important;
+}
+
+/* Сетка карточек */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+}
+
+/* Базовая карточка */
+.card {
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #09090b;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  contain: content;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Кликабельные карточки-кейсы */
+.clickable-case {
+  cursor: pointer;
+}
+
+.case-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: rgba(10, 10, 12, 0.92);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.gallery[data-active-category="branding"] .clickable-case .case-badge,
+.gallery[data-active-category="3d"] .primary-3d-case .case-badge {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card.animation-card img {
+  object-fit: contain !important;
+  background-color: #ffffff;
+  padding: 0;
+}
+
+/* МОДИФИКАТОРЫ ДЛЯ ЛОГОТИПОВ И КАРТОЧЕК */
+.card.bg-white {
+  background-color: #ffffff !important;
+}
+
+.card.bg-black {
+  background-color: #000000 !important;
+}
+
+.card.logo-card img {
+  object-fit: contain !important;
+  padding: 30px;
+}
+
+.card.vscl-logo {
+  background-color: #000000 !important;
+}
+
+.card.vscl-logo img {
+  object-fit: contain !important;
+  padding: 18px;
+  background-color: #000000 !important;
+}
+
+.card img.contain-img {
+  object-fit: contain !important;
+  padding: 24px;
+}
+
+.card.contain-card {
+  background-color: #ffffff !important;
+}
+
+.card.contain-card img {
+  object-fit: contain !important;
+  padding: 24px;
+}
+
+.card img.crop-top-img {
+  object-fit: cover !important;
+  object-position: top !important;
+  padding: 0 !important;
+}
+
+/* CTA карточка в конце вкладки ALL */
+.card.cta-case-card {
+  background: linear-gradient(135deg, #111114 0%, #08080a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  padding: 32px;
+  text-align: center;
+  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.cta-case-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-case-content h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.cta-arrow {
+  font-size: 24px;
+  color: #888888;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* МОДАЛЬНОЕ ОКНО (POPUP) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.96);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 40px 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background-color: #0d0d0e;
+  border: 1px solid #222224;
+  border-radius: 24px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  margin: auto 0;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.modal-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #1e1e22;
+  padding-bottom: 24px;
+  padding-right: 36px;
+}
+
+.modal-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+#modalSub {
+  color: #888888;
+  font-size: 15px;
+}
+
+.modal-desc {
+  color: #d4d4d8;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 14px;
+  max-width: 760px;
+}
+
+.modal-body-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-body-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px 700px;
+}
+
+.modal-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #1e1e22;
+}
+
+.modal-footer-nav button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ЛАЙТБОКС ДЛЯ ОДИНОЧНЫХ РАБОТ (С НАВИГАЦИЕЙ) */
+.lightbox-overlay {
+  align-items: center;
+  padding: 24px 64px;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 85vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 85vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+}
+
+.lightbox-nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 1010;
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+.lightbox-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.lightbox-caption {
+  color: #d4d4d8;
+  font-size: 14px;
+  text-align: center;
+}
+
+.lightbox-counter {
+  color: #71717a;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* КНОПКА BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease, color 0.2s ease;
+  z-index: 90;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ПУЛЬСИРУЮЩИЙ СТАТУС OPEN TO WORK */
+@keyframes pulseDot {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulseDot 2.2s infinite;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #a1a1aa;
+  background-color: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* Подвал (Footer) & Копирование почты + CV */
+.footer {
+  padding: 30px 40px;
+  background-color: #000000;
+  border-top: 1px solid #141416;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  transition: opacity 0.2s ease;
+}
+
+.copy-email-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #bbbbbb;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 2000;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.copyright {
+  color: #777777;
+  font-size: 14px;
+}
+
+/* ================= СТИЛИ ДЛЯ СТРАНИЦЫ ABOUT ================= */
+.nav-page-link {
+  text-decoration: none;
+}
+
+.about-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+  flex: 1;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.about-photo-card {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background-color: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 12px;
+}
+
+.about-intro h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.about-role {
+  font-size: 18px;
+  color: #bbbbbb;
+  margin-bottom: 24px;
+}
+
+.about-summary {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #d4d4d8;
+  margin-bottom: 16px;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Блок диплома и гитары (кликабельный кейс) */
+.diploma-showcase {
+  background-color: #0c0c0e;
+  border: 1px solid #1e1e22;
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 72px;
+  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diploma-clickable {
+  cursor: pointer;
+}
+
+.diploma-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.diploma-case-pill {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: #999999;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.diploma-grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 24px;
+}
+
+.diploma-card img {
+  width: 100%;
+  height: 430px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+.diploma-guitar-img {
+  object-position: center 10%;
+}
+
+.diploma-grad-img {
+  object-position: center 15%;
+}
+
+.diploma-caption {
+  padding-top: 12px;
+  font-size: 13px;
+  color: #888888;
+}
+
+/* Колонки опыта и навыков */
+.about-details-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+}
+
+.col-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1e1e22;
+}
+
+.timeline-item {
+  margin-bottom: 28px;
+}
+
+.timeline-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.timeline-item h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-place {
+  font-size: 14px;
+  color: #a1a1aa;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888888;
+}
+
+.skill-group {
+  margin-bottom: 24px;
+}
+
+.skill-group h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #888888;
+  margin-bottom: 12px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  background-color: #121215;
+  border: 1px solid #242429;
+  color: #e4e4e7;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+/* Hover-эффекты только для устройств с мышью (без залипания на тач-экранах) */
+@media (hover: hover) {
+  .site-logo:hover {
+    opacity: 0.8;
+  }
+
+  .filter-btn:hover {
+    transform: scale(1.08);
+  }
+
+  .about-nav-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: scale(1.05);
+  }
+
+  .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.92);
+      z-index: 2;
+    }
+
+  .card:hover img {
+    transform: scale(1.03);
+  }
+
+  .clickable-case:hover .case-badge {
+    opacity: 1 !important;
+  }
+
+  .card.cta-case-card:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-6px) scale(1.022);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.9);
+    z-index: 2;
+  }
+
+  .card.cta-case-card:hover .cta-arrow {
+    transform: translateX(6px);
+    color: #ffffff;
+  }
+
+  .modal-close-btn:hover {
+    opacity: 1;
+  }
+
+  .lightbox-nav-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .back-to-top:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+  }
+
+  .cta-link:hover {
+    opacity: 0.75;
+  }
+
+  .copy-email-btn:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+
+  .socials a:hover {
+    transform: scale(1.15);
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.04);
+  }
+
+  .btn-secondary:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .diploma-clickable:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-4px);
+  }
+
+  .diploma-clickable:hover .diploma-case-pill {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+/* Боковые стрелки переключения в развёрнутых кейсах */
+.case-nav-btn {
+  z-index: 1015;
+}
+
+@media (max-width: 1160px) {
+  .case-nav-btn {
+    display: none;
+  }
+}
+/* Адаптация для планшетов и мобильных */
+@media (max-width: 960px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .modal-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-photo-card {
+    max-width: 320px;
+  }
+
+  .about-details-grid,
+  .diploma-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diploma-header-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .diploma-header-row p {
+    margin-bottom: 4px;
+  }
+
+  .diploma-card img {
+    height: 360px;
+  }
+
+  .about-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .about-nav-btn {
+    order: 2;
+    margin-left: auto;
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+
+  .nav-filters {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .footer-container,
+  .footer-cta-group {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .modal-footer-nav {
+    flex-direction: column-reverse;
+  }
+
+  .modal-footer-nav button,
+  .modal-footer-nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lightbox-overlay {
+    padding: 20px 12px;
+  }
+
+  .lightbox-content,
+  .lightbox-content img {
+    max-width: 94vw;
+  }
+
+  .lightbox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+    top: auto;
+    bottom: 24px;
+    transform: none;
+  }
+
+  .lightbox-prev {
+    left: 24px;
+  }
+
+  .lightbox-next {
+    right: 24px;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Nikita Nareyko</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon & Social Preview (Open Graph) -->
+  <link rel="icon" type="image/png" href="images/LOGO_WHITE_BACKGROUND2.png">
+  <link rel="apple-touch-icon" href="images/LOGO_WHITE_BACKGROUND2.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — Nikita Nareyko | Graphic Designer">
+  <meta property="og:description" content="Graphic Designer & Brand Identity Specialist in Warsaw, Poland. BA in Graphic Design & Business.">
+  <meta property="og:image" content="images/LOGO_WHITE_BACKGROUND2.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About — Nikita Nareyko | Graphic Designer">
+  <meta name="twitter:description" content="Graphic Designer & Brand Identity Specialist in Warsaw, Poland.">
+  <meta name="twitter:image" content="images/LOGO_WHITE_BACKGROUND2.png">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/nnv_wh2.png" alt="NNV Logo" class="site-logo">
+      </a>
+    </div>
+    
+    <nav class="nav-filters">
+      <a href="index.html" class="filter-btn about-nav-btn" style="margin-left: 0;">← Works</a>
+      <a href="about.html" class="filter-btn active nav-page-link">About me</a>
+    </nav>
+  </header>
+
+  <!-- Контент страницы About -->
+  <main class="about-container">
+
+    <!-- Верхний блок: Фото + Интро -->
+    <section class="about-hero">
+      <div class="about-photo-card">
+        <img src="images/About/me.png" alt="Nikita Nareyko">
+      </div>
+
+      <div class="about-intro">
+        <div class="about-location">
+          <span class="status-dot"></span>
+          <span>Warsaw, Poland • Open to Work</span>
+        </div>
+        <h1>Nikita Nareyko</h1>
+        <p class="about-role">Graphic Designer & Brand Identity Specialist</p>
+        
+        <p class="about-summary">
+          Graphic designer with a Bachelor's degree in Graphic Design (2026, taught in English) and a Bachelor's degree in Business (Marketing). I build brand identities and visual systems—from modular logos and print/digital guidelines to logo animation.
+        </p>
+        <p class="about-summary">
+          With hands-on experience in visual design and marketing for B2B technology companies, I combine strategic business thinking with craft. I use AI tools to rapidly explore visual directions and finalize production-ready assets in Adobe Creative Suite and Blender.
+        </p>
+
+        <div class="about-actions">
+          <a href="images/About/Nikita_Nareyko_Resume_Graphic_Designer.pdf" target="_blank" class="btn-primary">Download CV (PDF)</a>
+          <a href="mailto:nikita@nareyko.com" class="btn-secondary">nikita@nareyko.com</a>
+          <button class="btn-secondary" onclick="copyEmail()">Copy email</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок: Дипломный проект (Кликабельный кейс) -->
+    <section class="about-section diploma-showcase diploma-clickable" onclick="openKrakenModal()">
+      <div class="section-header diploma-header-row">
+        <div>
+          <h2>Graduation Project: From 3D Concept to Physical Guitar</h2>
+          <p>Vistula University • BA in Graphic Design (2026). Exploring emotional form language in Blender and bringing the final design into reality.</p>
+        </div>
+        <span class="diploma-case-pill">VIEW 3D & PROCESS CASE →</span>
+      </div>
+
+      <div class="diploma-grid">
+        <div class="diploma-card">
+          <img src="images/About/diploma_guitar.jpg" alt="Finished Physical Guitar" class="diploma-guitar-img">
+          <div class="diploma-caption">Final handcrafted physical guitar</div>
+        </div>
+        <div class="diploma-card">
+          <img src="images/About/me_graduated.jpg" alt="Nikita Nareyko with Diploma and Guitar" class="diploma-grad-img">
+          <div class="diploma-caption">BA Diploma defense, Warsaw 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сетка: Опыт, Образование и Навыки -->
+    <section class="about-details-grid">
+      
+      <!-- Левая колонка: Опыт и Образование -->
+      <div class="about-col">
+        <h2 class="col-title">Experience</h2>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">04/2024 — Present</div>
+          <h3>Marketing Specialist & Visual Designer</h3>
+          <div class="timeline-place">Arviser Sp. z o.o. • Warsaw</div>
+          <p>Visual identity development for the FairHelm brand; LLM quality audit and AI readiness for B2B product teams.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">08/2023 — 03/2024</div>
+          <h3>Marketing Specialist</h3>
+          <div class="timeline-place">CENOS • Riga (Remote from Warsaw)</div>
+          <p>Visual content, campaign materials, and technical articles for B2B engineering simulation software.</p>
+        </div>
+
+        <h2 class="col-title" style="margin-top: 40px;">Education</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2023 — 2026</div>
+          <h3>BA in Graphic Design (English)</h3>
+          <div class="timeline-place">Vistula University • Warsaw</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2018 — 2022</div>
+          <h3>BA in Business (Marketing)</h3>
+          <div class="timeline-place">Institute of Business, BSU • Minsk</div>
+        </div>
+      </div>
+
+      <!-- Правая колонка: Навыки и Инструменты -->
+      <div class="about-col">
+        <h2 class="col-title">Skills & Tools</h2>
+
+        <div class="skill-group">
+          <h4>Design & Brand Systems</h4>
+          <div class="skill-tags">
+            <span>Brand Identity</span>
+            <span>Logo Systems</span>
+            <span>Typography</span>
+            <span>Colour Architecture</span>
+            <span>Print & Packaging</span>
+            <span>Logo Animation</span>
+            <span>Presentation Design</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Software</h4>
+          <div class="skill-tags">
+            <span>Adobe Illustrator</span>
+            <span>Adobe Photoshop</span>
+            <span>InDesign</span>
+            <span>After Effects</span>
+            <span>Figma</span>
+            <span>Blender (3D)</span>
+            <span>Premiere Pro</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>AI Workflow</h4>
+          <div class="skill-tags">
+            <span>Stable Diffusion</span>
+            <span>ChatGPT / Claude / Gemini</span>
+            <span>Rapid Concept Prototyping</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span>English (B2)</span>
+            <span>Polish (A2)</span>
+            <span>Russian (Native)</span>
+            <span>Belarusian (Native)</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Модальное окно кейса дипломной гитары -->
+  <div id="krakenModal" class="modal-overlay" onclick="closeKrakenOnOuterClick(event)">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeKrakenModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <h2>Kraken's Touch — Graduation Project</h2>
+        <div id="modalSub">From 3D Emotional Form Language in Blender to Handcrafted Physical Guitar (2026)</div>
+        <p class="modal-desc">
+          BA Diploma project at Vistula University. Exploring how sculptural silhouettes and surface textures evoke emotional responses—from 3D modeling and ergonomic prototyping in Blender to CNC/hand-shaping, custom painting, and assembling a playable electric guitar.
+        </p>
+        <a href="images/About/Diploma_Presentation.pdf" target="_blank" class="btn-primary" style="display:inline-block; margin-top:16px;">Open Full Concept PDF →</a>
+      </div>
+
+      <div class="modal-body-gallery">
+        <img src="images/About/B1.jpg" alt="Guitar as Personality — Research, Sketches, Clay & 3D Board" loading="lazy">
+        <img src="images/3D/agressive_guitar.png" alt="Aggressive Guitar 3D Concept" loading="lazy">
+        <img src="images/3D/warm_guitar.png" alt="Warm Guitar 3D Concept" loading="lazy">
+        <img src="images/3D/calm_guitar.png" alt="Calm Guitar 3D Concept" loading="lazy">
+        <img src="images/About/diploma_guitar.jpg" alt="Final Handcrafted Physical Guitar" loading="lazy">
+        <img src="images/About/me_graduated.jpg" alt="BA Diploma Defense Warsaw 2026" loading="lazy">
+      </div>
+
+      <div class="modal-footer-nav">
+        <button class="btn-secondary" onclick="closeKrakenModal()">← Back to About</button>
+        <a href="index.html" class="btn-primary" style="text-decoration: none;">Explore Full Portfolio →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Кнопка Back to Top -->
+  <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Тост-уведомление -->
+  <div id="copyToast" class="copy-toast">Email copied: nikita@nareyko.com</div>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-cta-group">
+        <span class="status-badge" title="Available for full-time & freelance opportunities">
+          <span class="status-dot"></span> Open to Work
+        </span>
+        <a href="mailto:nikita@nareyko.com" class="cta-link">LET'S WORK TOGETHER</a>
+        <button class="copy-email-btn" onclick="copyEmail()" title="Copy email address">Copy email</button>
+        <a href="images/About/Nikita_Nareyko_Resume_Graphic_Designer.pdf" target="_blank" class="copy-email-btn footer-cv-link" title="Open Resume PDF">CV (PDF)</a>
+      </div>
+      
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/nikitnar/" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.behance.net/NikitNar" target="_blank" aria-label="Behance">Bē</a>
+        <a href="https://t.me/NikitNar" target="_blank" aria-label="Telegram">TG</a>
+        <a href="mailto:nikita@nareyko.com" aria-label="Email">✉</a>
+      </div>
+
+      <div class="copyright">© 2026 All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    function openKrakenModal() {
+      const modal = document.getElementById('krakenModal');
+      modal.scrollTop = 0;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      updateBackToTopVisibility();
+    }
+
+    function closeKrakenModal() {
+      document.getElementById('krakenModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+      updateBackToTopVisibility();
+    }
+
+    function closeKrakenOnOuterClick(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        closeKrakenModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeKrakenModal();
+    });
+
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    function updateBackToTopVisibility() {
+      const anyModalOpen = document.querySelector('.modal-overlay.active') !== null;
+      if (!anyModalOpen && window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('nikita@nareyko.com').then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2400);
+      });
+    }
+  </script>
+
+</body>
+</html>
