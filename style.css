@@ -64,7 +64,7 @@ body {
   font-weight: 500;
   border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   display: inline-block;
 }
 
@@ -84,7 +84,7 @@ body {
   gap: 6px;
   margin-left: 12px;
   flex-shrink: 0;
-  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Плавное появление карточек при фильтрации */
@@ -117,6 +117,7 @@ body {
   isolation: isolate;
   transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -843,21 +844,24 @@ body {
   }
 
   .filter-btn:hover {
-    transform: scale(1.08);
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .filter-btn.active:hover {
+    background-color: #ffffff;
   }
 
   .about-nav-btn:hover {
     background-color: #ffffff;
     color: #000000;
     border-color: #ffffff;
-    transform: scale(1.05);
   }
 
   .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.92);
-      z-index: 2;
-    }
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.92);
+    z-index: 2;
+  }
 
   .card:hover img {
     transform: scale(1.03);
@@ -926,6 +930,7 @@ body {
     color: #000000;
   }
 }
+
 /* Боковые стрелки переключения в развёрнутых кейсах */
 .case-nav-btn {
   z-index: 1015;
@@ -936,6 +941,7 @@ body {
     display: none;
   }
 }
+
 /* Адаптация для планшетов и мобильных */
 @media (max-width: 960px) {
   .gallery {
